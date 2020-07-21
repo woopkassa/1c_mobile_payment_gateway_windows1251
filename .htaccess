@@ -1,0 +1,4 @@
+<Files wooppay_result.php>
+    Order allow,deny
+    Allow From All
+</Files>
