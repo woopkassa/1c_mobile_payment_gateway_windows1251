@@ -71,7 +71,7 @@ if ($order && $order['PAYED'] != 'Y') {
 				exit;
 			}
 
-			if ($operation_data->response->records[0]->status == WooppayOperationStatus::OPERATION_STATUS_DONE) {
+			if ($operation_data->response->records[0]->status == WooppayOperationStatus::OPERATION_STATUS_DONE || $operation_data->response->records[0]->status == WooppayOperationStatus::OPERATION_STATUS_WAITING) {
 				if (CSaleOrder::PayOrder($order['ID'], 'Y', true, true)) {
 					echo '{"data":1}';
 					exit;
